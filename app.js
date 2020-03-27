@@ -61,7 +61,7 @@ document.querySelector('.btn-hold').addEventListener('click', function(){
         document.querySelector('#score-' + activePlayer).textContent= scores[activePlayer];
         
         //Check if player won the game
-        if (scores[activePlayer] >= 10){
+        if (scores[activePlayer] >= 100){
             document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -82,14 +82,14 @@ function init(){
     roundScore = 0;
     activePlayer = 0;
     gamePlaying = true;
-    
+
     document.querySelector('.dice').style.display = 'none';// In CSS to hide something we will change the style.display content to 'none' (dice is a class and not an id so we will use . to select it )(we hide the dice because before the game begins we don't want to see it )
 
     //Instead of querySelector we can use getElementByID method which only works for IDs but it is faster than querySelector (here we don't use # symbol as we did in CSS style)
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
-    document.getElementById('current-0').textContent = '0'; 
+    document.getElementById('current-1').textContent = '0'; 
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
     document.querySelector('.player-0-panel').classList.remove('winner');
